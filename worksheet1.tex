@@ -1,0 +1,212 @@
+\documentclass{article}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{titling}
+\usepackage[margin=1in]{geometry}
+\newlist{steps}{enumerate}{1}
+\setlist[steps, 1]{label = Step \arabic*:}
+
+\begin{document}
+In this worksheet you will go through creating classes, basic input and output, use of primitive types, the string/array/vector class, and control flow.
+\section{Introductory}
+\subsection{First Steps in the Java Development Environment}
+\begin{steps}
+   \item Open up the IDE and lookup "Create a Class". Name this class Demo1 for your first Java program.
+   \begin{enumerate}[label=\Alph*.]
+   \item How do you create a class?
+   \end{enumerate} 
+   \item Now create a main method to provide an entry point into your program. The syntax to do so is: \\
+      \begin{verbatim}
+      public class Demo1 {
+
+         /* Send out a welcome message */
+         public static void main(String[] args) {
+
+            //comments in Java are the same as C++
+            System.out.println("Welcome to CS202's Java Workshop \textbackslash n" + "Enjoy!");
+         }
+      }
+\end{verbatim}
+   Whoa! Public static void main(String[] args) let's break this down a little.
+   \begin{enumerate}[label=\Alph*.]
+   \item Public means the this method is accessable from outside the class.
+   \item static means the method is owned by the class and not an instance (object). This allows main to be called without ever instantiating an object of the encapsulating class.
+   \item main returns void now instead of int. The System object has an "exit status" field that is returned by the Java Virtual Machine when the program terminates.
+   \item The array of Strings as an argument is optional but is recomended. This array will contain the arguments provided on the command line (space delineated). Unlike C and C++, the first item in this array is NOT the name of the program.
+   \end{enumerate} 
+
+   \item The System object provides an interface to access the output and error streams, the current time, and other useful tools like array copy or exit(). Take a look at Oracle's documentation of this object and see what is available.
+
+   \item 'out' is a field of the System object of type PrintStream. System.out.println(to\textunderscore print) does exactly what you would expect. Changing println to just print prints without a following new line. PrintStream also provides methods to flush the buffer and check for errors.
+   \item Compile and run the program in the console window.
+   \begin{enumerate}[label=\Alph*.]
+   \item Shift F10 or Run --- Run Main
+   \item Or, use the green "run" arrow from the toolbar by debug
+   \end{enumerate}
+\end{steps}
+\subsection{Creating Classes and Methods}
+   \begin{steps}
+      \item With the exception of a couple differences, loops, conditionals, and primitive
+         data types are the same as C++ with the addition of some syntactical options if
+         you prefer. Some key differences to keep in mind:
+   \begin{enumerate}[label=\Alph*.]
+      \item boolean is spelled out now
+      \item if statements must evaluate to Truth or False, unlike C++ where zero/NULL
+         would be false and non-zero would be true
+      \item null is now lowercase
+   \end{enumerate}
+   \item Write the following method in the Demo1 class: \\
+      The method will take three integer arguments. The method will display all the numbers,
+      each on their own line, that are divisible by the third argument and inbetween the first
+      two arguments. Remember that you need the scope specifier at the start of every method.
+      Write the function signiture below: \\
+      \vspace{1cm}\\
+      \underline{\hspace{15cm}}\\
+      \item Test this class by calling it from main. Make sure it works as expected!
+         Next we will add I/O utility so the user can interact with this method.
+\subsection
+{Creating a Utility Base Class for Generalized I/O and Changing the Program Entry Point}
+      \item Next we will create a utility base class that any class that needs user input
+         can inherit from.
+   \begin{enumerate}[label=\Alph*.]
+      \item Create a new class called Utility.
+      \item There are many methods of working with input in Java. We will use a Scanner object.
+         Scanners can be attached to an external data file but Java provides a FileReader class
+         that is worth looking at.
+      \item At the top of this new file for the Utility class import the Scanner utility:
+         \begin{verbatim}
+      import java.io.* 
+      import java.util.Scanner
+         \end{verbatim}
+      \item Give the Utility class a field for a Scanner referance and write a constructor
+         for the class that initializes it:
+         \begin{verbatim}
+      public class Utility {
+         protected Scanner input;
+         public Utility() {
+            input = new Scanner(System.in);
+      }
+         \end{verbatim}
+   \end{enumerate}
+      \item Let's move main() outside of the Demo1 class to clean things up a little bit.
+         Do this by creating another class called Main and move the main function to
+         this class. You will have to edit the entry point of your program to your new main()
+         to run your program. (Click Run on the taskbar dropdowns and click Edit Configurations.
+         There you will see where you can change the main class)
+   \end{steps}
+\section{Intermediate}
+\subsection{Using the I/O Utility class, the String Class, Class Fields, and Arrays}
+\begin{steps}
+      \item First take a look at the Scanner and String classes. 
+         Go to the docs to see what Scanner methods are available.
+         Some scanner methods that will be useful include: 
+   \begin{enumerate}[label=\Alph*.]
+      \item input.nextInt();     //returns the next whole number
+      \item input.nextFloat();   //returns the next float
+      \item input.next();        //returns the nest single word as a String
+      \item input.nextLine();    //returns the next phrase ending in a newline as a String
+   \end{enumerate}
+      \item Like in C++, be aware of newlines in the input stream.
+         Use input.nextLine(); to clear a line from the buffer.
+      \item While reading in some data from the user let's look at some of the functionality of
+         the String class. The String class has many useful methods. Go to the docs and search
+         String. Navigate to the methods overview section and use it to fill in the return and
+         argument types for the following methods (some may have no arguments):
+   \begin{enumerate}[label=\Alph*.]
+      \item \vspace{.5cm}\underline{\hspace{4cm}}equals(\underline{\hspace{4cm}});
+      \item \vspace{.5cm}\underline{\hspace{4cm}}equalsIgnoreCase(\underline{\hspace{4cm}});
+      \item \vspace{.5cm}\underline{\hspace{4cm}}compareTo(\underline{\hspace{4cm}});
+      \item \vspace{.5cm}\underline{\hspace{4cm}}compareToIgnoreCase(\underline{\hspace{4cm}});
+      \item \vspace{.5cm}\underline{\hspace{4cm}} = String + String;\\
+         Why might you want to use the concat() method instead of the overloaded + operator? \\
+         (Hint: think efficiency) \\
+         \vspace{.5cm}\\
+         \underline{\hspace{15cm}}
+      \item \vspace{.5cm}\underline{\hspace{4cm}}length(\underline{\hspace{4cm}});
+      \item \vspace{.5cm}\underline{\hspace{4cm}}contains(\underline{\hspace{4cm}});
+      \item \vspace{.5cm}\underline{\hspace{4cm}}toCharArray(\underline{\hspace{4cm}});
+      \item \vspace{.5cm}\underline{\hspace{4cm}}toLowerCase(\underline{\hspace{4cm}});
+      \item \vspace{.5cm}\underline{\hspace{4cm}}clone(\underline{\hspace{4cm}});
+   \end{enumerate}
+   \pagebreak
+      \item Create a new class called Person. Give Person private String fields for first/last 
+         name, float fields for hourly\textunderscore wage/hours\textunderscore worked, and
+         int fields for age/dollars/quarters/dimes/nickles/pennies. Write a constructor for
+         Person to set these fields to some defaults.
+         (null for the Strings, 0 for ints and floats)
+      \begin{verbatim}
+      public class Person extends Utility {
+         private String first;
+         private String last;
+         private float hourly_wage;
+         private float hours_worked;
+         private int age;
+         private int quarters;
+         ...
+
+         public Person() {
+            first = null;
+            last = null;
+            ...
+         }
+      }
+      \end{verbatim}
+
+      \item Give the person class a public build() method. Have this method prompt the user
+         to set the values for all the fields. Remember, the scanner methods return the values.
+      \begin{verbatim}
+      this.first = this.input.next();
+      \end{verbatim}
+         The 'this' keyword isn't required in this context but it is idiomatic Java to use it
+         whenever accessing fields of the current class.
+      \item Test the build method by creating a person from main() and calling the build
+         function. (from the main class)
+      \begin{verbatim}
+         public class Main {
+            public static void main(String[] args) {
+      \end{verbatim}
+      \vspace{.5cm}
+      \underline{\hspace{15cm}}\\
+      \vspace{.5cm}\\
+      \underline{\hspace{15cm}}
+
+      \begin{verbatim}
+            }
+      \end{verbatim}
+      \item Now add the following methods to the Person class:
+         \begin{enumerate}[label=\Alph*.]
+            \item display() --- displays a Person's details
+            \item work(float hours) --- adds an ammount to a Person's hours\textunderscore
+               worked field
+            \item pay() --- uses the hours\textunderscore worked and hourly\textunderscore wage
+               fields and adds to the dollars and coins fields.
+         \end{enumerate}
+      \item Add an array of Strings for performance reports.  Set it to null in the constructor.
+         Show how to add this field to the class:
+         \vspace{.5cm}\\
+         \underline{\hspace{15cm}}\\
+         And show how to create an array of 5 strings called reports:
+         \vspace{.5cm}\\
+         \underline{\hspace{15cm}}\\
+         And add a method that adds a performance report for the person by asking the user to
+         input a report. Make sure to take care of the special cases! Here are some tips:
+         \begin{enumerate}[label=\Alph*.]
+            \item The array object has a length field (array.length). This is the CAPACITY
+               of the array, not the number of items in the array. You have to keep track
+               of that yourself with another variable OR iterate through it searching for
+               null referances.
+            \item You can copy the content of an array using a for loop OR using the System
+               method:\\
+               System.arraycopy(Object src, int srcPos, Object dest, int destPos, int length);\\
+               See the docs for more details.
+         \end{enumerate} 
+      \item Last, create a method in Person to help you sort people by their last name.
+         The function should take another person as an argument and return an int.
+         Use the String method
+         compareToIgnoreCase(src) to determine which person comes first.\\
+            REMEMBER: Java overloaded the + operator for the String class but not the ==,
+            $>, <, \leq,$ or $\geq$ operators. So do not try to check string equality with ==.
+            Doing so will compare the referances to the actual Strings themselves.
+   \end{steps}
+   
+\end{document}
