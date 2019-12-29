@@ -1,15 +1,9 @@
-\documentclass{article}
-\usepackage{enumitem}
-\usepackage{titlesec}
-\usepackage{titling}
-\usepackage[margin=1in]{geometry}
-\newlist{steps}{enumerate}{1}
-\setlist[steps, 1]{label = Step \arabic*:}
+\documentclass[../../main.tex]{subfiles}
 
 \begin{document}
 In this worksheet you will go through creating classes, basic input and output, use of primitive types, the string/array/vector class, and control flow.
-\section{Introductory}
-\subsection{First Steps in the Java Development Environment}
+\subsection{Introductory}
+\subsubsection{First Steps in the Java Development Environment}
 \begin{steps}
    \item Open up the IDE and lookup "Create a Class". Name this class Demo1 for your first Java program.
    \begin{enumerate}[label=\Alph*.]
@@ -44,7 +38,7 @@ In this worksheet you will go through creating classes, basic input and output, 
    \item Or, use the green "run" arrow from the toolbar by debug
    \end{enumerate}
 \end{steps}
-\subsection{Creating Classes and Methods}
+\subsubsection{Creating Classes and Methods}
    \begin{steps}
       \item With the exception of a couple differences, loops, conditionals, and primitive
          data types are the same as C++ with the addition of some syntactical options if
@@ -64,7 +58,7 @@ In this worksheet you will go through creating classes, basic input and output, 
       \underline{\hspace{15cm}}\\
       \item Test this class by calling it from main. Make sure it works as expected!
          Next we will add I/O utility so the user can interact with this method.
-\subsection
+\subsubsection
 {Creating a Utility Base Class for Generalized I/O and Changing the Program Entry Point}
       \item Next we will create a utility base class that any class that needs user input
          can inherit from.
@@ -94,8 +88,8 @@ In this worksheet you will go through creating classes, basic input and output, 
          to run your program. (Click Run on the taskbar dropdowns and click Edit Configurations.
          There you will see where you can change the main class)
    \end{steps}
-\section{Intermediate}
-\subsection{Using the I/O Utility class, the String Class, Class Fields, and Arrays}
+\subsection{Intermediate}
+\subsubsection{Using the I/O Utility class, the String Class, Class Fields, and Arrays}
 \begin{steps}
       \item First take a look at the Scanner and String classes. 
          Go to the docs to see what Scanner methods are available.

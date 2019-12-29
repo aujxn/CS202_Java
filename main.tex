@@ -1,0 +1,68 @@
+\documentclass{article}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{titling}
+\usepackage[margin=1in]{geometry}
+\usepackage{subfiles}
+
+\titleformat{\section}
+{\huge \bfseries}
+{}
+{0em}
+{}[\titlerule]
+
+\titleformat{\subsection}
+{\LARGE \bfseries}
+{}
+{0em}
+{}
+
+\titleformat{\subsubsection}
+{\Large \bfseries}
+{}
+{0em}
+{}
+
+\renewcommand{\maketitle}{
+   \begin{center}
+      {\Huge \bfseries Java Workshop}
+   \end{center}
+}
+
+\newlist{steps}{enumerate}{1}
+\setlist[steps, 1]{label = \underline{\hspace{2em}} Step \arabic*:}
+
+
+\begin{document}
+
+\maketitle
+
+\section{Background One}
+\subfile{sections/part1/background1}
+\pagebreak
+
+\section{Goals One}
+\subfile{sections/part1/goals1}
+\pagebreak
+
+\section{Prelab One}
+\subfile{sections/part1/prelab1}
+\pagebreak
+
+\section{Worksheet One}
+\subfile{sections/part1/worksheet1}
+\pagebreak
+
+\section{Background Two}
+\pagebreak
+
+\section{Goals Two}
+\pagebreak
+
+\section{Prelab Two}
+\pagebreak
+
+\section{Worksheet Two}
+\pagebreak
+
+\end{document}
