@@ -1,7 +1,8 @@
 \documentclass[../../main.tex]{subfiles}
 
 \begin{document}
-In this worksheet you will go through creating classes, basic input and output, use of primitive types, the string/array/vector class, and control flow.
+In this worksheet you will go through creating classes, basic input and output,
+use of primitive types, the string/array/vector class, and control flow.
 \subsection{Introductory}
 \subsubsection{First Steps in the Java Development Environment}
 \begin{steps}
@@ -58,8 +59,9 @@ In this worksheet you will go through creating classes, basic input and output, 
       \underline{\hspace{15cm}}\\
       \item Test this class by calling it from main. Make sure it works as expected!
          Next we will add I/O utility so the user can interact with this method.
-\subsubsection
-{Creating a Utility Base Class for Generalized I/O and Changing the Program Entry Point}
+   \end{steps}
+\subsubsection{Creating a Utility Base Class for Generalized I/O}
+   \begin{steps}
       \item Next we will create a utility base class that any class that needs user input
          can inherit from.
    \begin{enumerate}[label=\Alph*.]
@@ -89,17 +91,17 @@ In this worksheet you will go through creating classes, basic input and output, 
          There you will see where you can change the main class)
    \end{steps}
 \subsection{Intermediate}
-\subsubsection{Using the I/O Utility class, the String Class, Class Fields, and Arrays}
+\subsubsection{String Class, Class Fields, and Arrays}
 \begin{steps}
-      \item First take a look at the Scanner and String classes. 
-         Go to the docs to see what Scanner methods are available.
-         Some scanner methods that will be useful include: 
-   \begin{enumerate}[label=\Alph*.]
-      \item input.nextInt();     //returns the next whole number
-      \item input.nextFloat();   //returns the next float
-      \item input.next();        //returns the nest single word as a String
-      \item input.nextLine();    //returns the next phrase ending in a newline as a String
-   \end{enumerate}
+      \item First take a look at the Scanner and String classes. Go to the
+         docs to see what Scanner methods are available. Some scanner methods
+         that will be useful include: 
+         \begin{enumerate}[label=\Alph*.]
+            \item input.nextInt();     //returns the next whole number
+            \item input.nextFloat();   //returns the next float
+            \item input.next();        //returns the nest single word as a String
+            \item input.nextLine();    //returns the next phrase ending in a newline as a String
+         \end{enumerate}
       \item Like in C++, be aware of newlines in the input stream.
          Use input.nextLine(); to clear a line from the buffer.
       \item While reading in some data from the user let's look at some of the functionality of

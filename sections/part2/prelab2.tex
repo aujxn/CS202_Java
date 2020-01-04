@@ -6,4 +6,57 @@ recursive linked list implementation. This will be the class you work
 with to complete this lab. The first half of this lab focuses on
 recursive linked list manipulations and the second advanced portion
 highlights some more advanced Java topics.
+
+\begin{steps}
+   \item Here is the C++ code to remove all evens recursively, utilizing pass by referance, returning the
+      new length of the list.
+      \begin{verbatim}
+      int remove_even()
+      {
+         if(!head)
+            return 0;
+         return remove_even(head);
+      }
+
+      int remove_even(node* & head)
+      {
+         if(!head) return 0;
+
+         if(head.get_data() % 2)
+            return 1 + remove_even(head.get_next());
+
+         node* to_rm = head;
+         head = head.get_next()
+         delete to_rm;
+         return remove_even(head);
+      }
+      \end{verbatim}
+
+      Modify this C++ to use pass by value by returning what will be head's next.\\
+      \vspace{10cm}
+   \item Now convert this to Java code:\\
+      \vspace{10cm}
+   \item Write a recursive build function in Java that gets each data from the user, asking the user
+      each time if they would like to add another item to the list.\\
+      \vspace{10cm}
+   \item Create a Linked List class in Java that fufils these requirements:
+   \begin{enumerate}[label=\Alph*.]
+      \item If you are using a Node class, there shouldn't be any public
+         class methods that take a Node as an argument or return a Node.
+      \item The data type of the list will be an integer.
+      \item Tail referance is optional.
+      \item Methods should include:
+         \begin{itemize}
+            \item insert - takes an int as an argument
+            \item remove - takes an int as an argument
+            \item build - int argument for the length of the random list to be constructed. (This could
+               be an overloaded constructor)
+            \item display - no arguments
+            \item clear - empties the list
+            \item sum - returns the sum of the list
+            \item avg - returns the average as a float
+         \end{itemize}
+      \item All of these methods should be implemented recursively. No loops allowed.
+   \end{enumerate}
+\end{steps}
 \end{document}

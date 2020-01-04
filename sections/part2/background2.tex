@@ -1,6 +1,51 @@
 \documentclass[../../main.tex]{subfiles}
 
 \begin{document}
+Part two of the Java workshop is mostly practice with recursion in java. Recursion in Java is quite
+different than recursion in C++ because Java doesn't have pass by referance.
+Some things to keep in mind are:
+   \begin{enumerate}[label=\Alph*.]
+         \item Every non-primitive type and arrays of primitives types are Java Referances. The referances
+            are most similar to C++ pointers.
+         \item You can only pass these referances by value. That means mutating an argument inside of
+            a function only mutates it inside of the scope of that function. It remains unchanged in
+            the calling routine.
+         \item Remember that nice recursion trick from C++ where you passed pointers by referance? Now
+            there isn't a nice way to do that.
+   \end{enumerate}
+
+There are a couple of different ways to handle this issue. One possibility is to create a class that
+encapsulates the referance. This way, when you mutate the referance, it is changed within the class.
+This solution is not ideal, as it requires superfluous abstractions and methods. Another option would
+be to insert the referance into an array of length one. This is similar to creating a pointer to a pointer
+in C++. This trick may be usefull occasionally but is honestly quite kludgy and unnatural. When others
+read your code they will be confused why your method takes an array when it only makes sense to pass in a
+single instance of the argument type.
+
+The recomended solution would be to return the modified value back to the calling routine. This way
+everything gets linked up correctly on the backtrace through the calling stack.
+
+Here is an example of how you could implement remove with this method for a LLL of integers:
+
+\begin{verbatim}
+   public void remove(int to_rm) throws EmptyList, NotFound
+   {
+      if(head == null)
+         throw new EmptyList;
+      this.head = remove(this.head, to_rm);
+   }
+
+   protected Node remove(Node head, int to_rm) throws NotFound
+   {
+      if(head == null)
+         throw new NotFound(to_rm);
+      if(head.get_data() == to_rm)
+         return head.get_next();
+      head.set_next(remove(head.get_next(), to_rm));
+      return head;
+   }
+\end{verbatim}
+
 abstract base class vs interface
 using collecions and std
 static, initialization blocks

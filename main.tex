@@ -19,7 +19,7 @@
 
 \titleformat{\subsubsection}
 {\Large \bfseries}
-{}
+{$\bullet\;$}
 {0em}
 {}
 
@@ -32,6 +32,7 @@
 \newlist{steps}{enumerate}{1}
 \setlist[steps, 1]{label = \underline{\hspace{2em}} Step \arabic*:}
 
+\setlength{\parindent}{0em}
 
 \begin{document}
 
@@ -54,12 +55,15 @@
 \pagebreak
 
 \section{Background Two}
+\subfile{sections/part2/background2.tex}
 \pagebreak
 
 \section{Prelab Two}
+\subfile{sections/part2/prelab2.tex}
 \pagebreak
 
 \section{Worksheet Two}
+\subfile{sections/part2/worksheet2.tex}
 \pagebreak
 
 \end{document}
