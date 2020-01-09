@@ -125,8 +125,47 @@ then that is available. Although, community version does everything you need and
 \pagebreak
 
 \subsection{Installing IntelliJ Idea}
+\begin{steps}
+   \item Navigate to www.jetbrains.com/idea/download/ and install the community version for the platform you are using. If you would like to
+      install the enterprise version then fill out the student information so you can get it at no cost.
+   \item Navigate to oracle.com/technetwork/java/javase/downloads and download and install the JDK for your platform. Make sure to note the
+      installation directory as you may need to tell the IDE where to find this installation.
+\end{steps}
+
 \subsection{IntelliJ basics}
-\emph{\bfseries Creating a Project}
-\emph{\bfseries Running and Debugging}
-\emph{\bfseries Adding Classes}
+\emph{\bfseries Creating a Project}\\
+\begin{steps}
+   \item Run IntelliJ and click create new project.
+   \item If the Project SDK dropdown didn't autofill with the location of the installed JDK, click new and navigate to the previous installed
+      folder.
+   \item Click next. If you would like IntelliJ to generate a main class and method, check create from template and select the Command Line App
+      option. Click next again.
+   \item Name your project, choose where to save it, and finish the wizard.
+   \item Expand the left hand side to see the directory tree. The source files are found in <Project_Name>/com.company/src/
+\end{steps}
+
+\emph{\bfseries Configurations and Plugins}\\
+Like vim, many configurations can be made to make IntelliJ what you need it to be. Open file > settings and take a look what is available.
+If you are used to vim key bindings, it is recomended that you install the IdeaVim plugin. Navigate to the plugins tab in settings and search
+for vim. By clicking install, this new environment will be much more familiar.
+
+\emph{\bfseries Adding Classes}\\
+\begin{steps}
+   \item With the source folder or any of its contents selected, classes can be added by going to file > new > Java Class.
+   \item Every class in Java gets it own source file, don't try to add multiple classes to a single file.
+   \item Every class can have a Main method if you would like. This can be usefull for testing features of a class.
+\end{steps}
+
+\emph{\bfseries Running and Debugging}\\
+In the top right corner there are green buttons - a triangle, hammer, and bug.
+\begin{steps}
+   \item The hammer builds (compiles) the program
+   \item The triangle runs the program - it also builds automatically if needed
+   \item The bug starts the debugger
+   \item If you didn't use the Command Line App template, you may need to set the entry point for your program. To do this, run > edit
+      configurations will bring up a dialogue box that lets you specify which class to start from. This class must have a Main function.
+      This is how you can change the entry point for your program for testing class methods.
+   \item The debugger offers familiar features like step, next, and continue. To set a breakpoint, click on the line number in your source.
+      A red dot should pop up and will stay there until clicked again.
+\end{steps}
 \end{document}
