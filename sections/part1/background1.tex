@@ -2,15 +2,15 @@
 
 \begin{document}
 \subsection{What is Java?}
-Java is a platform independant object oriented programming language developed by Sun Microsystems.
-It is comonly used for client-server web applications and is one of the most widely used
+Java is a platform-independent object-oriented programming language developed by Sun Microsystems.
+It is commonly used for client-server web applications and is one of the most widely used
 programming languages. The primary appeal of using Java is that a compiled Java program works on
 any computer architecture that runs a Java Virtual Machine (JVM). This idea of portability through
 limited dependencies is the primary ethos of the language but other core values include security,
 simplicity, and performance.
 
 \vspace{1em}
-Java is more comletely described as the Java Development Kit (JDK), a software platform made up of
+Java is more completely described as the Java Development Kit (JDK), a software platform made up of
 various components such as the compiler, debugger, and Java Runtime Environment (JRE). The JRE is
 a piece of software that contains everything needed to run a compiled Java program (called a Java
 Bytecode - similar to a C++ binary) including the Java libraries, the Java Virtual Machine (JVM),
@@ -19,16 +19,16 @@ This is how Java achieves platform agnosticism.
 
 \vspace{1em}
 Another benefit of the Java runtime is that it takes care of memory management through a process
-called garbage collection (GC). This provides the developer the oppurtunity to focus on other
-aspects of program design and can prevent issues like memory leaks and memory based security
+called garbage collection (GC). This provides the developer the opportunity to focus on other
+aspects of program design and can prevent issues like memory leaks and memory-based security
 exploits. GC comes at the cost of memory consumption and inconsistent performance but for many
 applications these costs are negligible.
 
 \vspace{1em}
-There are some drawbacks of large runtimes like the JRE. The most noteworthy being inconsistent
-performance. It is difficult to know when the GC will run and if you are developing performance
-critical code, think airplanes or stoplights, then Java might not be the tool for you. Java uses
-an incremental GC system so these inconsistencies are often negligible. Another issue is long
+There are some drawbacks to large runtimes like the JRE. The most noteworthy being inconsistent
+performance. It is difficult to know when the GC will run and if you are developing performance-
+critical code--think airplanes or stoplights--then Java might not be the tool for you. Java uses
+an incremental GC system so these inconsistencies are often minimal. Another issue is long
 start up time. The runtime is so large it takes a minute to get going. This issue has been quite
 the challenge for developers at Oracle to address. When you start using IntelliJ, you will
 understand this issue and avoid closing the IDE at all costs. Lastly, if there is a bug in the
@@ -51,14 +51,14 @@ aware of:
    \begin{itemize}
       \item Member: A Method or a Field of a class.
       \item Methods: Are functions of a class. If you use the words
-         "member function" to a Java developer they might laugh at you.
+         "member function" with a Java developer they might laugh at you.
       \item Fields: A piece of data in a class (like an int or a
          String). These are sometimes called variables as well but a
          variable also refers to local data where a field refers to a
          class member.
-      \item Referance: Its a fancy pointer. It is very differen
-         from a C++ referance and much closer to a C++ pointer.
-         (a C++ referance is immutable and CANNOT be null)
+      \item Reference: Its a fancy pointer. It is very different
+         from a C++ reference and much closer to a C++ pointer.
+         (a C++ reference is immutable and CANNOT be null)
       \item final: A Java keyword that designates something cannot be
          changed. A final class cannot be derived from, a final
          variable is like a C++ const variable, and a final method
@@ -73,9 +73,9 @@ aware of:
       \item super: A Java keyword to access members of a class's
          parent.
       \item Supertype (of type A): Any class or interface above A in
-         the inheritence tree.
+         the inheritance tree.
       \item this: A Java keyword to represent the instance of the class
-         in which it appears. Although Java does not require, it is
+         in which it appears. Although Java does not require it, it is
          idiomatic in Java to use this.member whenever you are
          accessing members within a class.
       \item extends: A Java keyword to declare that a class is a
@@ -87,7 +87,7 @@ aware of:
    \end{itemize}
 
 \subsection{Tips for Success}
-Use Oracle's documentation. The Java version at time of writing is Java
+Use Oracle's documentation. The Java version at the time of writing is Java
 SE 13 with the most recent LTS version being Java 8.
 You probably downloaded the the SE 13 version of the JDK. The API
 documentation for SE 13 is found here:
@@ -99,7 +99,7 @@ https://docs.oracle.com/en/java/javase/13/docs/api/index.html
 \vspace{.5em}
 
 Oracle's documentation is incredibly detailed and organized. Any question you have about the language can be answered by
-reading them. In the process of looking for the answer you will learn things about the language and develop skills that are not
+reading it. In the process of looking for the answer you will learn things about the language and develop skills that are not
 limited to Java. The tutorials page in the documentation is also full of easy to read and detailed explanations of various topics.
 Stack Overflow and other tutorial websites can be useful to gather information but be careful to assess the quality. Try using
 these resources to find where in the documentation to look instead of massaging other's code examples to fit your application.
@@ -117,10 +117,10 @@ that can be helpful when you aren't familiar with the language or the project. H
 only valuable if you know what the IDE is suggesting and can decide if it is actually what you want to do.
 IDEs can also take care of "boiler plate" code by importing templates, snippets, and project structures.
 
-Most IDEs have community maintained plugin repositories giving you the ability to extend its functionality.
+Most IDEs have community-maintained plugin repositories giving you the ability to extend its functionality.
 IntelliJ has a particulary large community and ecosystem. It is important to note that Jetbrains products
-are free to students with an academic email while in school. So if you would like the ultimate version and
-then that is available. Although, community version does everything you need and is free to everyone.
+are free to students with an academic email while in school. So if you would like the ultimate version it 
+is available, although the community version does everything you need and is free to everyone.
 
 \pagebreak
 
@@ -151,8 +151,8 @@ for vim. By clicking install, this new environment will be much more familiar.
 \subsubsection{Adding Classes}
 \begin{steps}
    \item With the source folder or any of its contents selected, classes can be added by going to file > new > Java Class.
-   \item Every class in Java gets it own source file, don't try to add multiple classes to a single file.
-   \item Every class can have a Main method if you would like. This can be usefull for testing features of a class.
+   \item Every class in Java gets it's own source file, don't try to add multiple classes to a single file.
+   \item Every class can have a Main method if you would like. This can be useful for testing features of a class.
 \end{steps}
 
 \subsubsection{Running and Debugging}

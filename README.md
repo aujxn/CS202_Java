@@ -1,7 +1,7 @@
 # Java Workshop
 
 This repository contains lab materials to introduce first year computer science students to their
-second formal language. The students are moving from C++ to Java so many of the comparasons are
+second formal language. The students are moving from C++ to Java so many of the comparisons are
 references to differences in the languages. The purpose of the lab is to provide some insight in
 techniques on how to begin learning how to develop in new languages on the fly.
 
