@@ -1,28 +1,28 @@
 \documentclass[../../main.tex]{subfiles}
 
 \begin{document}
-Part two of the Java workshop is mostly practice with recursion in java. Recursion in Java is quite
-different than recursion in C++ because Java doesn't have pass by referance.
+Part two of the Java workshop is mostly practice with recursion in Java. Recursion in Java is quite
+different than recursion in C++ because Java doesn't have pass by reference.
 Some things to keep in mind are:
    \begin{enumerate}[label=\Alph*.]
-         \item Every non-primitive type and arrays of primitives types are Java Referances. The referances
+         \item Every non-primitive type and arrays of primitive types are Java references. The references
             are most similar to C++ pointers.
-         \item You can only pass these referances by value. That means mutating an argument inside of
+         \item You can only pass these references by value. That means mutating an argument inside of
             a function only mutates it inside of the scope of that function. It remains unchanged in
             the calling routine.
-         \item Remember that nice recursion trick from C++ where you passed pointers by referance? Now
-            there isn't a nice way to do that.
+         \item Remember that nice recursion trick from C++ where you passed pointers by reference? Now
+            there isn't a way to do that.
    \end{enumerate}
 
 There are a couple of different ways to handle this issue. One possibility is to create a class that
-encapsulates the referance. This way, when you mutate the referance, it is changed within the class.
+encapsulates the reference. This way, when you mutate the reference, it is changed within the class.
 This solution is not ideal, as it requires superfluous abstractions and methods. Another option would
-be to insert the referance into an array of length one. This is similar to creating a pointer to a pointer
-in C++. This trick may be usefull occasionally but is honestly quite kludgy and unnatural. When others
+be to insert the reference into an array of length one. This is similar to creating a pointer to a pointer
+in C++. This trick may be useful occasionally but is honestly quite kludgy and unnatural. When others
 read your code they will be confused why your method takes an array when it only makes sense to pass in a
 single instance of the argument type.
 
-The recomended solution would be to return the modified value back to the calling routine. This way
+The recommended solution would be to return the modified value back to the calling routine. This way
 everything gets linked up correctly on the backtrace through the calling stack.
 
 Here is an example of how you could implement remove with this method for a LLL of integers:
