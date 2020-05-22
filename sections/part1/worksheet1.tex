@@ -24,7 +24,7 @@ use of primitive types, the string/array/vector class, and control flow.
 \end{verbatim}
    Whoa! \emph{Public static void main(String[] args)} let's break this down a little.
    \begin{enumerate}[label=\Alph*.]
-   \item Public means the this method is accessable from outside the class.
+   \item Public means this method is accessable from outside the class.
    \item static means the method is owned by the class and not an instance (object). This allows main to be called without ever instantiating an object of the encapsulating class.
    \item main returns void now instead of int. The System object has an "exit status" field that is returned by the Java Virtual Machine when the program terminates.
    \item The array of Strings as an argument is optional but is recomended. This array will contain the arguments provided on the command line (space delineated). Unlike C and C++, the first item in this array is NOT the name of the program.
@@ -46,15 +46,15 @@ use of primitive types, the string/array/vector class, and control flow.
          you prefer. Some key differences to keep in mind:
    \begin{enumerate}[label=\Alph*.]
       \item boolean is spelled out now
-      \item if statements must evaluate to Truth or False, unlike C++ where zero/NULL
+      \item if statements must evaluate to True or False, unlike C++ where zero/NULL
          would be false and non-zero would be true
       \item null is now lowercase
    \end{enumerate}
    \item Write the following method in the Demo1 class: \\
-      The method will take three integer arguments. The method will display all the numbers,
-      each on their own line, that are divisible by the third argument and inbetween the first
-      two arguments. Remember that you need the scope specifier at the start of every method.
-      Write the function signiture below: \\
+      The method will take three integer arguments. It will display all the numbers, each on 
+      their own line, that are divisible by the third argument and inbetween the first two 
+      arguments. Remember that you need the scope specifier at the start of every method.
+      Write the function signature below: \\
       \vspace{1cm}\\
       \underline{\hspace{15cm}}\\
       \item Test this class by calling it from main. Make sure it works as expected!
@@ -62,8 +62,8 @@ use of primitive types, the string/array/vector class, and control flow.
    \end{steps}
 \subsubsection{Creating a Utility Base Class for Generalized I/O}
    \begin{steps}
-      \item Next we will create a utility base class that any class that needs user input
-         can inherit from.
+      \item Next we will create a utility base class that can be inherited by any class that
+          needs user input.
    \begin{enumerate}[label=\Alph*.]
       \item Create a new class called Utility.
       \item There are many methods of working with input in Java. We will use a Scanner object.
@@ -176,7 +176,7 @@ use of primitive types, the string/array/vector class, and control flow.
       \item Now add the following methods to the Person class:
          \begin{enumerate}[label=\Alph*.]
             \item display() --- displays a Person's details
-            \item work(float hours) --- adds an ammount to a Person's hours_
+            \item work(float hours) --- adds an amount to a Person's hours_
                worked field
             \item pay() --- uses the hours_worked and hourly_wage
                fields and adds to the dollars and coins fields.
@@ -188,7 +188,7 @@ use of primitive types, the string/array/vector class, and control flow.
          And show how to create an array of 5 strings called reports:
          \vspace{.5cm}\\
          \underline{\hspace{15cm}}\\
-         And add a method that adds a performance report for the person by asking the user to
+         Add a method that adds a performance report for the person by asking the user to
          input a report. Make sure to take care of the special cases! Here are some tips:
          \begin{enumerate}[label=\Alph*.]
             \item The array object has a length field (array.length). This is the CAPACITY
